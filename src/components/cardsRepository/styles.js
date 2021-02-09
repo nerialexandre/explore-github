@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const RepositoryCard = styled.a`
+const RepositoryCard = styled.div`
     background-color: #ffffff;
     border-radius: 5px;
     box-sizing: border-box;

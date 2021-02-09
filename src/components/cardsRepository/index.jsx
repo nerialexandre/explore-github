@@ -6,11 +6,11 @@ import arrow from '../../assets/Vector.svg';
 
 const Card = (props) => {
   const {
-    fullName, avatar, description, user,
+    fullName, avatar, description,
   } = props;
   return (
 
-    <RepositoryCard href={user}>
+    <RepositoryCard>
       <img src={avatar} alt="img do perfil" className="profile-picture" />
       <div className="card">
         <div className="text">

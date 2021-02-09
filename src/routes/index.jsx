@@ -8,7 +8,7 @@ import Repository from '../pages/Repository/index';
 const Routes = () => (
   <Switch>
     <Route path="/" exact component={Dashboard} />
-    <Route path="/Repositories/:user" component={Repository} />
+    <Route path="/Repositories/:user+" component={Repository} />
   </Switch>
 );
 

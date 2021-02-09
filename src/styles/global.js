@@ -20,6 +20,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: 16px, 'Roboto', sans-serif;
 	vertical-align: baseline;
+	text-decoration:none;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,

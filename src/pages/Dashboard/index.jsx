@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import {
   Title, Repositories, Form, DisplayError,
@@ -6,7 +7,6 @@ import {
 
 import Card from '../../components/cardsRepository/index';
 import axios from '../../services/GitHubService';
-
 import logoImg from '../../assets/Logo.svg';
 
 const Dashboard = () => {
@@ -27,13 +27,14 @@ const Dashboard = () => {
       const prevRepositoryes = repositories;
       await setRepositories(prevRepositoryes.concat(repository));
 
-      console.log(repositories);
       setNewRepo('');
       setInputError('');
     }).catch(() => {
       setInputError('Usuario nao localizado.');
     });
   }
+
+  console.log(repositories);
 
   return (
     <>
@@ -56,13 +57,16 @@ const Dashboard = () => {
 
       <Repositories>
         {repositories.map((item) => (
-          <Card
-            key={item.full_name}
-            fullName={item.full_name}
-            avatar={item.owner.avatar_url}
-            description={item.description}
-            user={`Repositories/${item.owner.login}`}
-          />
+          <Link to={`Repositories/${item.full_name}`}>
+            <Card
+              key={item.full_name}
+              fullName={item.full_name}
+              avatar={item.owner.avatar_url}
+              description={item.description}
+              user={`Repositories/${item.owner.login}`}
+            />
+          </Link>
+
         ))}
       </Repositories>
     </>
